@@ -1,18 +1,18 @@
-namespace :jekyll do
-  dest = Rails.public_path.join('blog')
+# namespace :jekyll do
+#   dest = Rails.public_path.join('blog')
 
-  options = {
-    'baseurl' => '/blog',
-    'config' => Rails.root.join('config', 'jekyll.yml').to_s,
-    'watch' => true,
-    'port' => 3000,
-    'source' => Rails.root.join('blog').to_s,
-    'destination' => dest.to_s
-  }
+#   options = {
+#     'baseurl' => '/blog',
+#     'config' => Rails.root.join('config', 'jekyll.yml').to_s,
+#     'watch' => true,
+#     'port' => 3000,
+#     'source' => Rails.root.join('blog').to_s,
+#     'destination' => dest.to_s
+#   }
 
-  build = Thread.new { Jekyll::Commands::Build.process(options) }
-  serve = Thread.new { Jekyll::Commands::Serve.process(options) }
+#   build = Thread.new { Jekyll::Commands::Build.process(options) }
+#   serve = Thread.new { Jekyll::Commands::Serve.process(options) }
 
-  commands = [build, serve]
-  commands.each(&:join)
-end
+#   commands = [build, serve]
+#   commands.each(&:join)
+# end

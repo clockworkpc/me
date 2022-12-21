@@ -16,3 +16,10 @@
 #   commands = [build, serve]
 #   commands.each(&:join)
 # end
+
+namespace :jekyll do
+  desc 'Rebuild Jekyll posts'
+  task build: :environment do
+    `bundle exec jekyll build -s ./blog/ -d public/blog/ --config config/jekyll.yml`
+  end
+end
